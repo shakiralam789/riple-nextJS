@@ -7,6 +7,7 @@ import FacebookIcon from "../../icons/FacebookIcon";
 import LinkedInIcon from "../../icons/LinkedInIcon";
 import InstagramIcon from "../../icons/InstagramIcon";
 import Link from "next/link";
+import SocialIconsCom from "../../SocialIconsCom";
 
 export default function TopNav() {
   return (
@@ -30,32 +31,7 @@ export default function TopNav() {
               <span className="break-all">+8801952319889</span>
             </div>
           </div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-4 text-white md:pl-10">
-            <Link
-              href={"/"}
-              className="size-[24px] 2xl:size-[30px] rounded-full border border-white flex items-center justify-center"
-            >
-              <TwitterIcon />
-            </Link>
-            <Link
-              href={"/"}
-              className="size-[24px] 2xl:size-[30px] rounded-full border border-white flex items-center justify-center"
-            >
-              <FacebookIcon />
-            </Link>
-            <Link
-              href={"/"}
-              className="size-[24px] 2xl:size-[30px] rounded-full border border-white flex items-center justify-center"
-            >
-             <LinkedInIcon />
-            </Link>
-            <Link
-              href={"/"}
-              className="size-[24px] 2xl:size-[30px] rounded-full border border-white flex items-center justify-center"
-            >
-             <InstagramIcon />
-            </Link>
-          </div>
+          <SocialIconsCom className="justify-center md:justify-end md:pl-10"/>
         </div>
       </div>
     </section>

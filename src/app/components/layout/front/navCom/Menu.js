@@ -1,30 +1,9 @@
 import Link from "next/link";
 import React from "react";
 
-let menuItems = [
-  {
-    name: "home",
-    link: "/",
-  },
-  {
-    name: "service",
-    link: "/",
-  },
-  {
-    name: "Portfolio",
-    link: "/",
-  },
-  {
-    name: "Blog",
-    link: "/",
-  },
-  {
-    name: "Contact us",
-    link: "/",
-  },
-];
 
-export default function Menu() {
+
+export default function Menu({menuItems}) {
   return (
     menuItems &&
     menuItems.length > 0 && (

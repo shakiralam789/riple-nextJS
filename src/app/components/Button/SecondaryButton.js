@@ -12,7 +12,7 @@ export default function SecondaryButton({ className = "", children, href, ...res
   }
 
   return (
-    <button {...rest} className={cn("btn-primary", className)}>
+    <button {...rest} className={cn("btn-secondary", className)}>
       {children}
     </button>
   );

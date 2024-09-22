@@ -67,11 +67,11 @@ export default function ClientReview() {
                 {ClientReviewData.map((data, index) => (
                   <SwiperSlide key={index}>
                     <>
-                      <p class="font-18 text-para mt-6 leading-loose">
+                      <p className="font-18 text-para mt-6 leading-loose">
                         {data.desc}
                       </p>
-                      <div class="flex gap-3 mt-8 w-7/12">
-                        <div class="size-[50px] 2xl:size-[65px] overflow-hidden bg-gray-light rounded-full">
+                      <div className="flex gap-3 mt-8 w-7/12">
+                        <div className="size-[50px] 2xl:size-[65px] overflow-hidden bg-gray-light rounded-full">
                           <Image
                             src={data.image}
                             width={100}
@@ -80,10 +80,10 @@ export default function ClientReview() {
                           />
                         </div>
                         <div>
-                          <div class="text-dark2 font-22 font-semibold">
+                          <div className="text-dark2 font-22 font-semibold">
                             {data.name}
                           </div>
-                          <p class="font-18 text-para mt-1">
+                          <p className="font-18 text-para mt-1">
                             {data.designation}
                           </p>
                         </div>

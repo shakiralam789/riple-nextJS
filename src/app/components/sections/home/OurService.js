@@ -66,7 +66,7 @@ export default function OurService() {
               </div>
               <Link
                 href={item.link}
-                className="w-full cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3.5 border-dark-green group-hover:border-white border text-dark-green group-hover:text-white uppercase flex justify-between items-center gap-2 mt-8"
+                className="w-full cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3.5 border-slate-300 group-hover:border-slate-300 border text-dark-green group-hover:text-white uppercase flex justify-between items-center gap-2 mt-8"
               >
                 <span>learn more</span>
                 <ArrowRight />
