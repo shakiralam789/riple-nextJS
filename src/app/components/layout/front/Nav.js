@@ -17,10 +17,6 @@ let menuItems = [
     name: "student view",
     link: "/student-view",
   },
-  {
-    name: "Contact us",
-    link: "/",
-  },
 ];
 
 export default function Nav() {
