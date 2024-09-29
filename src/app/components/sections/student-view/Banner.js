@@ -1,13 +1,44 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import PrimaryButton from "../../Button/PrimaryButton";
 import ArrowLeft from "../../icons/ArrowLeft";
 import ArrowRight from "../../icons/ArrowRight";
 import SecondaryButton from "../../Button/SecondaryButton";
+import { gsap } from "gsap";
 
 export default function Banner() {
+  const bannerRef = useRef(null);
+  useEffect(() => {
+    const banner = bannerRef.current;
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      banner.querySelector("h1"),
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power4.out" }
+    )
+      .fromTo(
+        banner.querySelector("p"),
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power4.out" },
+        "-=0.5"
+      )
+      .fromTo(
+        banner.querySelector(".btn-1"),
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.7)" },
+        "-=0.5"
+      )
+      .fromTo(
+        banner.querySelector(".btn-2"),
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.7)" },
+        "-=0.5"
+      );
+  }, []);
   return (
-    <section id="banner" className="bg-dark2 overflow-hidden">
+    <section id="banner" className="bg-dark2 overflow-hidden" ref={bannerRef}>
       <div className="container relative text-white flex items-center">
         <Image
           className="hidden 2xl:block pointer-events-none w-[150px] 2xl:w-[200px] absolute top-[2%] 2xl:top-[10%] left-0 2xl:left-auto 2xl:right-full z-0"
@@ -44,11 +75,11 @@ export default function Banner() {
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
 
-              <SecondaryButton className="flex items-center gap-2">
+              <SecondaryButton className="btn-1 flex items-center gap-2">
                 <span>Get started</span>
                 <ArrowRight />
               </SecondaryButton>
-              <PrimaryButton className="flex items-center gap-2">
+              <PrimaryButton className="btn-2 flex items-center gap-2">
                 <span>Learn more</span>
                 <ArrowRight />
               </PrimaryButton>

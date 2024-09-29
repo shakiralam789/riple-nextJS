@@ -1,11 +1,110 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { gsap } from "gsap";
 import SecondaryButton from "../../Button/SecondaryButton";
 import ArrowRight from "../../icons/ArrowRight";
+import DiscoveryCall from "./BookNow/DiscoveryCall";
 
 export default function Banner() {
+  const [isBookNowOpen, setIsBookNowOpen] = useState(false);
+
+  const bannerRef = useRef(null);
+  const bookNowRef = useRef(null);
+  const fixedBookNowBtnRef = useRef(null);
+
+  function openBookNow() {
+    setIsBookNowOpen(true);
+  }
+
+  useEffect(() => {
+    const banner = bannerRef.current;
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      banner.querySelector("h1"),
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power4.out" }
+    )
+      .fromTo(
+        banner.querySelector("p"),
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power4.out" },
+        "-=0.5"
+      )
+      .fromTo(
+        banner.querySelector("button"),
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.7)" },
+        "-=0.5"
+      );
+  }, []);
+
+  function closeAnim() {
+    document.body.style.overflow = "auto";
+    if (bookNowRef.current) {
+      gsap.to(bookNowRef.current, {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power4.out",
+        onComplete: () => {
+          setIsBookNowOpen(false);
+        },
+      });
+    }
+  }
+
+  function openAnim() {
+    document.body.style.overflow = "hidden";
+    if (bookNowRef.current) {
+      gsap.fromTo(
+        bookNowRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, ease: "power4.out" }
+      );
+    }
+  }
+
+  useEffect(() => {
+    if (isBookNowOpen) {
+      openAnim();
+    } else {
+      closeAnim();
+    }
+  }, [isBookNowOpen]);
+
+  useEffect(() => {
+    function showBookNowBtn() {
+      let banner = bannerRef.current;
+      let scrollButton = fixedBookNowBtnRef.current;
+
+      let bannerBottom = banner.getBoundingClientRect().bottom;
+
+      const scrollPosition = window.innerHeight + window.scrollY;
+      const pageHeight = document.documentElement.scrollHeight;
+
+      if (bannerBottom < 0) {
+        scrollButton.classList.add("active");
+
+        if (scrollPosition >= pageHeight - 40) {
+          scrollButton.classList.remove("active");
+        } else {
+          scrollButton.classList.add("active");
+        }
+      } else {
+        scrollButton.classList.remove("active");
+      }
+    }
+
+    window.addEventListener("scroll", showBookNowBtn);
+
+    return () => {
+      window.removeEventListener("scroll", showBookNowBtn);
+    };
+  }, []);
+
   return (
-    <section id="banner" className="bg-dark2 overflow-hidden">
+    <section id="banner" className="bg-dark2 overflow-hidden" ref={bannerRef}>
       <div className="container relative text-white flex items-center">
         <Image
           className="hidden 2xl:block pointer-events-none w-[150px] 2xl:w-[200px] absolute top-[2%] 2xl:top-[10%] left-0 2xl:left-auto 2xl:right-full z-0"
@@ -43,7 +142,10 @@ export default function Banner() {
               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
               officia deserunt mollit anim id est laborum.
             </p>
-            <SecondaryButton className="btn-secondary flex items-center gap-2 mt-8">
+            <SecondaryButton
+              onClick={openBookNow}
+              className="btn-secondary flex items-center gap-2 mt-8"
+            >
               <span>book a call</span>
               <ArrowRight />
             </SecondaryButton>
@@ -133,6 +235,28 @@ export default function Banner() {
           </div>
         </div>
       </div>
+
+      <div
+        ref={fixedBookNowBtnRef}
+        className="duration-300 pointer-events-none [&.active]:pointer-events-auto opacity-0 [&.active]:opacity-100 fixed bottom-8 right-8 z-20 w-fit"
+      >
+        <SecondaryButton
+          id="scrollButton"
+          onClick={openBookNow}
+          className="book-call flex hover:bg-dark2 items-center gap-2 mt-8"
+        >
+          <span>book a call</span>
+          <ArrowRight />
+        </SecondaryButton>
+      </div>
+
+      {isBookNowOpen && (
+        <DiscoveryCall
+          ref={bookNowRef}
+          isBookNowOpen={isBookNowOpen}
+          closeAnim={closeAnim}
+        />
+      )}
     </section>
   );
 }
