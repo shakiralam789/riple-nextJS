@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sedan+SC&family=Teachers:ital,wght@0,400..800;1,400..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sedan+SC&family=Suez+One&family=Teachers:ital,wght@0,400..800;1,400..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sedan+SC&family=Suez+One&family=Teachers:ital,wght@0,400..800;1,400..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +8,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-h1{
+h1 {
   font-family: "Suez One", serif;
 }
 
@@ -18,10 +18,10 @@ h1{
   margin: auto;
 }
 
-#menu{
+#menu {
   z-index: 99;
 }
-#overlay{
+#overlay {
   z-index: 98;
 }
 
@@ -32,7 +32,7 @@ h1{
   .font-18 {
     @apply text-[13px] md:text-[14px] 2xl:text-[18px];
   }
-  .font-22{
+  .font-22 {
     @apply text-[14px] md:text-[16px] 2xl:text-[22px];
   }
   .font-30 {
@@ -47,84 +47,84 @@ h1{
   .font-66 {
     @apply text-[30px] sm:text-[40px] lg:text-[50px] 2xl:text-[66px];
   }
-  .btn-primary{
-    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3.5 border-2 border-primary text-primary hover:bg-primary hover:text-dark2 duration-300 uppercase
+  .btn-primary {
+    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3.5 border-2 border-primary text-primary hover:bg-primary hover:text-dark2 duration-300 uppercase;
   }
-  .btn-secondary{
-    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3.5 border-2 border-primary bg-primary text-dark2 hover:bg-transparent hover:text-primary duration-300 uppercase
+  .btn-secondary {
+    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3.5 border-2 border-primary bg-primary text-dark2 hover:bg-transparent hover:text-primary duration-300 uppercase;
   }
-  .btn-3{
-    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3.5 border-dark-green border text-dark-green hover:bg-dark-green hover:text-white duration-300 uppercase
+  .btn-3 {
+    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3.5 border-dark-green border text-dark-green hover:bg-dark-green hover:text-white duration-300 uppercase;
   }
-  .def-input{
-    @apply text-dark2 font-18 py-2 2xl:py-3 px-3 2xl:px-4 border w-full outline-none
+  .def-input {
+    @apply text-dark2 font-18 py-2 2xl:py-3 px-3 2xl:px-4 border w-full outline-none;
   }
 
-  .def-label{
-    @apply text-dark2 font-18 inline-block
+  .def-label {
+    @apply text-dark2 font-18 inline-block;
   }
-  textarea{
-    @apply h-[100px] 2xl:h-[136px]
+  textarea {
+    @apply h-[100px] 2xl:h-[136px];
   }
 }
 .custom-shadow-1 {
-  box-shadow: 0 0 10px #00000079
+  box-shadow: 0 0 10px #00000079;
 }
 .custom-shadow-2 {
-  box-shadow: 0px 4px 10px #00000011
+  box-shadow: 0px 4px 10px #00000011;
 }
 .triangle {
   width: 40px;
   height: 100%;
-  clip-path: polygon(0 0, 100% 0%, 40% 100%,0 100%);
+  clip-path: polygon(0 0, 100% 0%, 40% 100%, 0 100%);
   position: relative;
 }
 
-.triangle::after{
-    position: absolute;
-    content: '';
-    top: 0;
-    bottom: 0;
-    right: 0px;
-    width: 100%;
-    background: white;
-    clip-path: polygon(70% 0, 80% 0%, 20% 100%,10% 100%);
+.triangle::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0px;
+  width: 100%;
+  background: white;
+  clip-path: polygon(70% 0, 80% 0%, 20% 100%, 10% 100%);
 }
 
-#scrollButton{
+#scrollButton {
   animation: move 600ms linear infinite alternate-reverse;
 }
 @keyframes move {
-  0%{
+  0% {
     transform: translateX(0);
-  } 
-  100%{
+  }
+  100% {
     transform: translateX(16px);
   }
 }
 
-.move-x{
+.move-x {
   animation: moveX 800ms linear infinite alternate-reverse;
 }
 
 @keyframes moveX {
-  0%{
+  0% {
     transform: translateX(0);
-  } 
-  100%{
+  }
+  100% {
     transform: translateX(16px);
   }
 }
 
-.move-y{
+.move-y {
   animation: moveY 800ms linear infinite alternate-reverse;
 }
 
 @keyframes moveY {
-  0%{
+  0% {
     transform: translateY(0);
-  } 
-  100%{
+  }
+  100% {
     transform: translateY(16px);
   }
 }
@@ -167,63 +167,70 @@ h1{
 
 @keyframes rotate {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
-.rotate-right{
+.rotate-right {
   animation: rotateRight 9s linear infinite;
 }
-.inner-right-with-translate{
+.inner-right-with-translate {
   animation: rotateRightWithTranslate 9s linear infinite;
 }
 
 @keyframes rotateRight {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(-360deg);
+    transform: rotate(-360deg);
   }
 }
 @keyframes rotateRightWithTranslate {
   0% {
-      transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   100% {
-      transform: translate(-50%, -50%) rotate(-360deg);
+    transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
-.rotate-left{
+.rotate-left {
   animation: rotateLeft 9s linear infinite;
 }
 
 @keyframes rotateLeft {
   0% {
-      transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   100% {
-      transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
-#player-parent{
+#player-parent {
   z-index: 99;
 }
 
-label.required{
+label.required {
   position: relative;
 }
 
-label.required::after{
-  content: '*';
+label.required::after {
+  content: "*";
   position: absolute;
   left: 100%;
   top: 0;
-  color:  red;
+  color: red;
 }
 .shuffle-item {
   transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.MuiDialogActions-root {
+  display: none !important;
+}
+.MuiPickersToolbar-root{
+  padding: 0 !important;
 }

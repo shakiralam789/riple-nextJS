@@ -5,10 +5,11 @@ import { gsap } from "gsap";
 import SecondaryButton from "../../Button/SecondaryButton";
 import ArrowRight from "../../icons/ArrowRight";
 import DiscoveryCall from "./BookNow/DiscoveryCall";
+import EnterDetails from "./BookNow/EnterDetails";
+import SelectDataTime from "./BookNow/SelectDataTime";
 
 export default function Banner() {
   const [isBookNowOpen, setIsBookNowOpen] = useState(false);
-
   const bannerRef = useRef(null);
   const bookNowRef = useRef(null);
   const fixedBookNowBtnRef = useRef(null);
@@ -255,7 +256,7 @@ export default function Banner() {
           ref={bookNowRef}
           isBookNowOpen={isBookNowOpen}
           closeAnim={closeAnim}
-        />
+        ></DiscoveryCall>
       )}
     </section>
   );
