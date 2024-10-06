@@ -9,7 +9,7 @@ export default function CancelIcon({className=""}) {
       viewBox="0 0 24 24"
       strokeWidth="2"
       stroke="currentColor"
-      className={cn("size-4", className)}
+      className={cn("size-5 2xl:size-7", className)}
     >
       <path
         strokeLinecap="round"

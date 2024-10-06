@@ -4,7 +4,12 @@ import gsap from "gsap";
 import SidebarSocial from "./SidebarSocial";
 import ArrowLeft from "@/app/components/icons/ArrowLeft";
 import UserIcon from "@/app/components/icons/UserIcon";
+import SignIn from "./SignIn";
+import SignUp from "./SignInUp";
 export default function Sidebar({ menuItems, closeSideBar, className = "" }) {
+  const [isLoginModal, setIsLoginModal] = useState(false);
+  const [isSignUpModal, setIsSignUpModal] = useState(false);
+  const user = true;
   return (
     <>
       <div
@@ -39,17 +44,40 @@ export default function Sidebar({ menuItems, closeSideBar, className = "" }) {
                 ))}
               </ul>
 
-             <SidebarSocial />
+              <SidebarSocial />
             </div>
             <div className="px-4 flex justify-center py-4">
-              <button className="w-full mt-auto btn-primary border-white text-white border flex justify-center items-center gap-2">
-                <span>login</span>
-               <UserIcon />
-              </button>
+              {user ? (
+                <button onClick={() => setIsLoginModal(true)} className="w-full mt-auto btn-primary border-primary text-white border flex justify-center items-center gap-2">
+                  <span>login</span>
+                  <UserIcon />
+                </button>
+              ) : (
+                <button onClick={() => setIsSignUpModal(true)} className="w-full mt-auto btn-primary border-primary text-white border flex justify-center items-center gap-2">
+                  <span>Sign up</span>
+                  <UserIcon />
+                </button>
+              )}
             </div>
           </div>
         </div>
       </div>
+
+      {isLoginModal && (
+        <SignIn
+          setIsSignUpModal={setIsSignUpModal}
+          isLoginModal={isLoginModal}
+          setIsLoginModal={setIsLoginModal}
+        />
+      )}
+
+      {isSignUpModal && (
+        <SignUp
+          setIsLoginModal={setIsLoginModal}
+          isSignUpModal={isSignUpModal}
+          setIsSignUpModal={setIsSignUpModal}
+        />
+      )}
     </>
   );
 }

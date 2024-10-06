@@ -32,6 +32,9 @@ h1 {
   .font-18 {
     @apply text-[13px] md:text-[14px] 2xl:text-[18px];
   }
+  .font-24 {
+    @apply text-base md:text-[18px] 2xl:text-[24px];
+  }
   .font-22 {
     @apply text-[14px] md:text-[16px] 2xl:text-[22px];
   }
@@ -48,16 +51,16 @@ h1 {
     @apply text-[30px] sm:text-[40px] lg:text-[50px] 2xl:text-[66px];
   }
   .btn-primary {
-    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3.5 border-2 border-primary text-primary hover:bg-primary hover:text-dark2 duration-300 uppercase;
+    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-2.5 2xl:py-3 border-2 border-primary text-primary hover:bg-primary hover:text-dark2 duration-300 uppercase;
   }
   .btn-secondary {
-    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3.5 border-2 border-primary bg-primary text-dark2 hover:bg-transparent hover:text-primary duration-300 uppercase;
+    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-2.5 2xl:py-3.5 border-2 border-primary bg-primary text-dark2 hover:bg-transparent hover:text-primary duration-300 uppercase;
   }
   .btn-3 {
-    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3.5 border-dark-green border text-dark-green hover:bg-dark-green hover:text-white duration-300 uppercase;
+    @apply cursor-pointer min-w-fit px-4 font-18 2xl:px-6 py-3 2xl:py-3 border-dark-green border text-dark-green hover:bg-dark-green hover:text-white duration-300 uppercase;
   }
   .def-input {
-    @apply text-dark2 font-18 py-2 2xl:py-3 px-3 2xl:px-4 border w-full outline-none;
+    @apply text-dark2 font-18 py-3 2xl:py-3.5 px-3 2xl:px-4 border w-full outline-none;
   }
 
   .def-label {
